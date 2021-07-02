@@ -23,10 +23,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: check out code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: setup dotnet 5
-      - uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v1
         with:
             dotnet-version: '5.0.x'
 
