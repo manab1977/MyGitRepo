@@ -1,0 +1,24 @@
+name: CI CD workflow
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: check out code
+          uses: actions/checkout@v2
+
+        - name: setup dotnet 5
+          uses: actions/setup-dotnet@v1
+            with:
+            dotnet-version: '5.0.x'
+
+        - name: Restore dependencies
+          run: dotnet restore
+
+        - name: Build application
+          run: dotnet build -c release --no-restore
