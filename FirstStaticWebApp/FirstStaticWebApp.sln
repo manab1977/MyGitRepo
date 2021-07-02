@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstStaticWebApp", "FirstStaticWebApp.csproj", "{BC4B2D04-B3B3-4D5C-A125-B540869DD7E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstStaticWebApp", "FirstStaticWebApp.csproj", "{BC4B2D04-B3B3-4D5C-A125-B540869DD7E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{97A32A0E-A9F7-4EB7-9E16-B2C8A4614521}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflow", "workflow", "{E154ECD2-2ADA-4492-954E-B7DF244A5AD2}"
+	ProjectSection(SolutionItems) = preProject
+		ci-cd.yaml = ci-cd.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E154ECD2-2ADA-4492-954E-B7DF244A5AD2} = {97A32A0E-A9F7-4EB7-9E16-B2C8A4614521}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {66A55565-83C0-47C7-8881-095A9C3A1314}
