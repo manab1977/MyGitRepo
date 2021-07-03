@@ -16,17 +16,9 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: 'dot net Restore'
-  inputs:
-    command: 'restore'
-    projects: './FirstStaticWebApp/*.csproj'
-    feedsToUse: config
-    nugetConfigPath: NuGet.config    # Relative to root of the repository
-    
-- task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: './FirstStaticWebApp/*.csproj'
+    projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
   displayName: 'dotnet build $(buildConfiguration)'
  
