@@ -32,13 +32,13 @@ jobs:
         run: dotnet restore ./FirstStaticWebApp/FirstStaticWebApp.csproj
         
       - name: Restore dependencies for test project
-        run: dotnet restore ./FirstStaticWebAppTest/FirstStaticWebApp.test.csproj
+        run: dotnet restore ./FirstStaticWebApp.test/FirstStaticWebApp.test.csproj
 
       - name: Build main application
         run: dotnet build ./FirstStaticWebApp/FirstStaticWebApp.csproj -c Release --no-restore
         
       - name: Build test application
-        run: dotnet build ./FirstStaticWebApp/FirstStaticWebApp.test.csproj -c Release --no-restore
+        run: dotnet build ./FirstStaticWebApp.test/FirstStaticWebApp.test.csproj -c Release --no-restore
         
       - name: Run automated tests
         run: dotnet test ./**/*.test.csproj -c Release --no-build
