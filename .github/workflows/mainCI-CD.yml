@@ -28,11 +28,17 @@ jobs:
       - name: Display dotnet version
         run: dotnet --version
               
-      - name: Restore dependencies
-        run: dotnet /t:restore ./**/*.csproj
+      - name: Restore dependencies for main project
+        run: dotnet restore ./FirstStaticWebApp/FirstStaticWebApp.csproj
+        
+      - name: Restore dependencies for test project
+        run: dotnet restore ./FirstStaticWebAppTest/FirstStaticWebApp.test.csproj
 
-      - name: Build application
-        run: dotnet /t:build ./**/*.csproj -c Release --no-restore
+      - name: Build main application
+        run: dotnet build ./FirstStaticWebApp/FirstStaticWebApp.csproj -c Release --no-restore
+        
+      - name: Build test application
+        run: dotnet build ./FirstStaticWebApp/FirstStaticWebApp.test.csproj -c Release --no-restore
         
       - name: Run automated tests
         run: dotnet test ./**/*.test.csproj -c Release --no-build
